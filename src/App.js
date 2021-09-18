@@ -12,7 +12,7 @@ import {
 
 function App() {
   const [mode, setMode] = useState('light'); // weather dark mode is enable
-  const [alert, setAlert] = useState(null);
+  const [alert, setAlert] = useState(null); // alert
 
   const showAlert = (message, type) => {
     setAlert({
