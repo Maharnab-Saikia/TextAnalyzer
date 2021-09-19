@@ -33,15 +33,8 @@ export default function TextForm(props) {
         props.showAlert('Extra Whitespaces are Removed!', 'success');
     }
 
-    const handleDownloadClick = () => {
-        let newText = text;
-        setText(newText)
-    }
-
     const handleCopyClick = () => {
-        let text = document.getElementById('myBox');
-        text.select();
-        navigator.clipboard.writeText(text.value);
+        navigator.clipboard.writeText(text);
         props.showAlert('Text Copied!', 'success');
     }
 
@@ -56,6 +49,7 @@ export default function TextForm(props) {
     }
 
     const [text, setText] = useState("");
+
     return (
         <>
             <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
@@ -63,23 +57,26 @@ export default function TextForm(props) {
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{ background: props.mode === 'dark' ? '#333333' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="myBox" rows="8" placeholder="Enter text here..."></textarea>
                 </div>
-                <button className="btn btn-primary m-1" onClick={handleUpClick}>Convert to Uppercase</button>
-                <button className="btn btn-primary m-1" onClick={handleLoClick}>Convert to Lowercase</button>
-                <button className="btn btn-primary m-1" onClick={handleReverseClick}>Reverse Text</button>
-                <button className="btn btn-primary m-1" onClick={handleRemovePuncClick}>Remove Punctuation</button>
-                <button className="btn btn-primary m-1" onClick={handleRemoveClick}>Remove Extra Whitespaces</button>
-                <button className="btn btn-primary m-1" onClick={handleDownloadClick}>Download Text</button>
-                <button className="btn btn-primary m-1" onClick={handleCopyClick}>Copy Text</button>
-                <button className="btn btn-primary m-1" onClick={handleClearClick}>Clear Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary m-1" onClick={handleUpClick}>Convert to Uppercase</button>
+                <button disabled={text.length === 0} className="btn btn-primary m-1" onClick={handleLoClick}>Convert to Lowercase</button>
+                <button disabled={text.length === 0} className="btn btn-primary m-1" onClick={handleReverseClick}>Reverse Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary m-1" onClick={handleRemovePuncClick}>Remove Punctuation</button>
+                <button disabled={text.length === 0} className="btn btn-primary m-1" onClick={handleRemoveClick}>Remove Extra Whitespaces</button>
+                <button disabled={text.length === 0} className="btn btn-primary m-1" onClick={handleCopyClick}>Copy Text</button>
+                <button disabled={text.length === 0} className="btn btn-primary m-1" onClick={handleClearClick}>Clear Text</button>
             </div>
+
+
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2>Summery:</h2>
-                <li>{text.split(" ").filter((element) => { return element.length !== 0 }).length} Words and {text.length} Characters.</li>
-                <li>{0.008 * text.split(' ').filter((element) => { return element.length !== 0 }).length} Minutes Readtime.</li>
+                <p className="form-control mb-1" style={{ background: props.mode === 'dark' ? '#333333' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} Words and {text.length} Characters.</p>
+                <p className="form-control" style={{ background: props.mode === 'dark' ? '#333333' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}>{0.008 * text.split(' ').filter((element) => { return element.length !== 0 }).length} Minutes Readtime.</p>
             </div>
+
+
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2>Preview:</h2>
-                <p className={`border border-${props.mode === 'dark' ? 'white' : 'black'} rounded p-2`}>{text.length > 0 ? text : 'Nothing to preview!'}</p>
+                <p className="form-control" style={{ background: props.mode === 'dark' ? '#333333' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}>{text.length > 0 ? text : 'Nothing to preview!'}</p>
             </div>
         </>
     )
