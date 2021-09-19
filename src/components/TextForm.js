@@ -59,7 +59,7 @@ export default function TextForm(props) {
     return (
         <>
             <div className="container" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
-                <h1>{props.heading}</h1>
+                <h2 className="my-3">{props.heading}</h2>
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} style={{ background: props.mode === 'dark' ? '#333333' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }} id="myBox" rows="8" placeholder="Enter text here..."></textarea>
                 </div>
@@ -73,11 +73,13 @@ export default function TextForm(props) {
                 <button className="btn btn-primary m-1" onClick={handleClearClick}>Clear Text</button>
             </div>
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
-                <h2>Your text summery</h2>
-                <li>{text.split(" ").filter(item => item).length} Words and {text.length} Characters.</li>
+                <h2>Summery:</h2>
+                <li>{text.split(" ").filter((element) => { return element.length !== 0 }).length} Words and {text.length} Characters.</li>
                 <li>{0.008 * text.split(' ').length} Minutes Readtime.</li>
-                <h2>Preview</h2>
-                <p className={`border border-${props.mode === 'dark' ? 'white' : 'black'} rounded p-2`}>{text.length > 0 ? text : 'Enter something in the text box above to preview it here...'}</p>
+            </div>
+            <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
+                <h2>Preview:</h2>
+                <p className={`border border-${props.mode === 'dark' ? 'white' : 'black'} rounded p-2`}>{text.length > 0 ? text : 'Nothing to preview!'}</p>
             </div>
         </>
     )

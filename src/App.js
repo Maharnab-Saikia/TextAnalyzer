@@ -49,7 +49,7 @@ function App() {
             </Route>
 
             <Route exact path="/">
-              <TextForm heading="Enter the text to analyze below" mode={mode} showAlert={showAlert} />
+              <TextForm heading="Text Analyzer:" mode={mode} showAlert={showAlert} />
             </Route>
 
           </Switch>
