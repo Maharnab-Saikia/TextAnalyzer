@@ -12,6 +12,7 @@ import {
 
 function App() {
   const [mode, setMode] = useState('light'); // weather dark mode is enable
+  const [alertf, setAlertf] = useState('')
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type) => {
@@ -19,9 +20,12 @@ function App() {
       msg: message,
       type: type
     })
+
+    setAlertf('show')
+
     setTimeout(() => {
       setAlert(null);
-    }, 1500);
+    }, 2000);
   }
 
   const toggleMode = () => {
@@ -40,7 +44,7 @@ function App() {
     <>
       <Router>
         <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} />
-        <Alert alert={alert} />
+        <Alert alert={alert} alertf={alertf} />
         <div className="container my-3">
           <Switch>
 
