@@ -7,7 +7,7 @@ function Alert(props) {
     }
 
     return (
-        props.alert && <div id="snackbar" className={props.alertf}>
+        props.alert && <div id="snackbar" className={props.alertf} style={{ background: props.mode === 'dark' ? 'white' : '#333333', color: props.mode === 'dark' ? 'black' : 'white' }}>
             <strong>{capitalized(props.alert.type)}</strong>: {props.alert.msg}
         </div>
     )
