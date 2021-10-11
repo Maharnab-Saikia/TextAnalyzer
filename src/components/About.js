@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-import CoffeeIcon from '@mui/icons-material/Coffee';
+import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 export default function About(props) {
@@ -17,7 +17,7 @@ export default function About(props) {
                 <h3 className="fst-italic">Thank you for visiting my website,</h3>
                 <p>I am still a student, so a coffee would come in handy.</p>
 
-                <Button variant="contained" href="https://www.buymeacoffee.com/Maharnab" className="m-2" style={{ background: '#FFDD00', color: 'black' }} startIcon={<CoffeeIcon />}>Buy me a Coffee</Button>
+                <Button variant="contained" href="https://www.instagram.com/maharnab.saikia/" className="m-2" style={{ background: '#F20048', color: 'white' }} startIcon={<InstagramIcon />}>Instagram</Button>
 
                 <Button variant="contained" href="https://github.com/Maharnab-Saikia/TextAnalyzer" className="m-2" style={{ background: '#24292F', color: 'white' }} startIcon={<GitHubIcon />}>Open Source</Button>
             </div>
