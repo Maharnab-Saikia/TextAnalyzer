@@ -75,17 +75,15 @@ export default function TextForm(props) {
 
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2>Summery:</h2>
-                <Grid id="list">
-                    <List>
-                        <ListItem>
-                            <ListItemText>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} Words and {text.length} Characters.</ListItemText>
-                        </ListItem>
-                        <Divider />
-                        <ListItem>
-                            <ListItemText>{0.008 * text.split(' ').filter((element) => { return element.length !== 0 }).length} Minutes Readtime.</ListItemText>
-                        </ListItem>
-                    </List>
-                </Grid>
+                <List id="list">
+                    <ListItem>
+                        <ListItemText>{text.split(/\s+/).filter((element) => { return element.length !== 0 }).length} Words and {text.length} Characters.</ListItemText>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <ListItemText>{0.008 * text.split(' ').filter((element) => { return element.length !== 0 }).length} Minutes Readtime.</ListItemText>
+                    </ListItem>
+                </List>
             </div>
 
             <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : 'black' }}>
