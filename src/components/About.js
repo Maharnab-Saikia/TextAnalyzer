@@ -14,8 +14,7 @@ export default function About(props) {
                 <p className="mb-5">Hi, I am <strong>Maharnab Saikia</strong> a Web Developer and a Programmer from Assam, India. I am
                     currently learning MERN stack and Django framework. This is a Text Analyzer website made with React, this is my first react
                     project.</p>
-                <h3 className="fst-italic">Thank you for visiting my website,</h3>
-                <p>I am still a student, so a coffee would come in handy.</p>
+                <h3 className="fst-italic">Thank you for visiting my website</h3>
 
                 <Button variant="contained" href="https://www.instagram.com/maharnab.saikia/" className="m-2" style={{ background: '#F20048', color: 'white' }} startIcon={<InstagramIcon />}>Instagram</Button>
 
