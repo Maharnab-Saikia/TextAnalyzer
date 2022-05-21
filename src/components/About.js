@@ -1,6 +1,5 @@
 import React from 'react'
 import Button from '@mui/material/Button';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
 
@@ -11,13 +10,7 @@ export default function About(props) {
             <div className="p-4 mb-3 rounded" style={{ background: props.mode === 'dark' ? '#333333' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}>
                 <h2 className="fst-italic">About Website</h2>
                 <p className="mb-5">This text analysis tool provides information on the complexity of a text, It allows you to analyse a text by counting the number of sentences, words and characters present. It also provides statistical information on the repetition of phrases and keywords. Our online text analyser / word counter is easy to use and free of charge.</p>
-                <h2 className="fst-italic">About Developer</h2>
-                <p className="mb-5">Hi, I am <strong>Maharnab Saikia</strong> a Web Developer and a Programmer from Assam, India. I am
-                    currently learning MERN stack and Django framework. This is a Text Analyzer website made with React, this is my first react
-                    project.</p>
                 <h3 className="fst-italic">Thank you for visiting my website</h3>
-
-                <Button variant="contained" href="https://www.instagram.com/maharnab.saikia/" className="m-2" style={{ background: '#F20048', color: 'white' }} startIcon={<InstagramIcon />}>Instagram</Button>
 
                 <Button variant="contained" href="https://github.com/Maharnab-Saikia/TextAnalyzer" className="m-2" style={{ background: '#24292F', color: 'white' }} startIcon={<GitHubIcon />}>Open Source</Button>
             </div>
@@ -57,4 +50,10 @@ export default function About(props) {
     <div className="container">
                 <button onClick={toogleStyle} className={btnType}>{btnText}</button>
             </div>
+
+
+
+import InstagramIcon from '@mui/icons-material/Instagram';
+    
+                    <Button variant="contained" href="https://www.instagram.com/maharnab.saikia/" className="m-2" style={{ background: '#F20048', color: 'white' }} startIcon={<InstagramIcon />}>Instagram</Button>
     */
